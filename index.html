@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JeetBangla Bangladesh - Premier online casino featuring cricket betting, slots, live casino, fish shooting games, and lottery. Get exclusive bonuses, VIP rewards, and mobile app access.">
+    <title>JeetBangla Online Casino Bangladesh - Cricket Betting, Slots & Live Games</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #00d4ff;
+            --secondary: #7c3aed;
+            --accent: #f59e0b;
+            --dark: #0f172a;
+            --darker: #020617;
+            --light: #f8fafc;
+            --glass: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.15);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--darker);
+            color: var(--light);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(124, 58, 237, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        header.scrolled {
+            background: rgba(15, 23, 42, 0.95);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 0;
+        }
+
+        .logo {
+            font-size: 32px;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: logoShimmer 4s ease-in-out infinite;
+            letter-spacing: -0.5px;
+        }
+
+        @keyframes logoShimmer {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.3); }
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: rgba(248, 250, 252, 0.85);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--light);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn {
+            padding: 12px 28px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--darker);
+            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0, 212, 255, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--light);
+            border: 2px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-outline:hover {
+            background: var(--glass);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .hero {
+            margin-top: 90px;
+            padding: 120px 0 80px;
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 19px;
+            color: rgba(248, 250, 252, 0.75);
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .hero-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+        }
+
+        .hero-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 48px rgba(0, 212, 255, 0.2);
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary);
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: rgba(248, 250, 252, 0.6);
+            margin-top: 4px;
+        }
+
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        h2 {
+            font-size: 44px;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: rgba(248, 250, 252, 0.65);
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 48px;
+            margin-bottom: 32px;
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .glass-card.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+
+        h3 {
+            font-size: 28px;
+            margin-bottom: 18px;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
+            margin-top: 48px;
+        }
+
+        .feature-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 36px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            transform: translateY(40px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .feature-card.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 212, 255, 0.4);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+        }
+
+        .feature-icon {
+            font-size: 52px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 22px;
+            margin-bottom: 14px;
+        }
+
+        .feature-card p {
+            color: rgba(248, 250, 252, 0.75);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .promo-box {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(124, 58, 237, 0.15));
+            border: 2px dashed rgba(0, 212, 255, 0.4);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .promo-box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .promo-code {
+            font-size: 40px;
+            font-weight: 800;
+            color: var(--accent);
+            letter-spacing: 4px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            position: relative;
+        }
+
+        .copy-btn {
+            margin-top: 20px;
+        }
+
+        .success-msg {
+            display: none;
+            color: #10b981;
+            margin-top: 12px;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        ul {
+            margin: 24px 0;
+            padding-left: 24px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            color: rgba(248, 250, 252, 0.85);
+            line-height: 1.7;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 28px 32px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+
+        .faq-question {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 12px;
+        }
+
+        .faq-answer {
+            color: rgba(248, 250, 252, 0.8);
+            line-height: 1.8;
+        }
+
+        .responsible-gaming {
+            background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(124, 58, 237, 0.1));
+            border-left: 4px solid var(--accent);
+            padding: 32px;
+            border-radius: 12px;
+            margin: 48px 0;
+        }
+
+        footer {
+            background: rgba(2, 6, 23, 0.95);
+            border-top: 1px solid var(--glass-border);
+            padding: 48px 0 24px;
+            text-align: center;
+            position: relative;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            margin: 24px 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(248, 250, 252, 0.65);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .copyright {
+            color: rgba(248, 250, 252, 0.5);
+            font-size: 14px;
+            margin-top: 24px;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            z-index: 999;
+            font-size: 24px;
+            color: var(--darker);
+            font-weight: 800;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 12px 32px rgba(0, 212, 255, 0.4);
+        }
+
+        a {
+            color: var(--primary);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--secondary);
+        }
+
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <nav>
+                <div class="logo">JeetBangla</div>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#games" class="nav-link">Games</a></li>
+                    <li><a href="#promotions" class="nav-link">Promotions</a></li>
+                    <li><a href="#faq" class="nav-link">FAQ</a></li>
+                </ul>
+                <div class="cta-buttons">
+                    <a href="https://jeetbangla.casino/jeetbangla-login/" class="btn btn-outline">Login</a>
+                    <a href="https://jeetbangla.casino/jeetbangla-register/" class="btn btn-primary">Sign Up</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div>
+                    <h1>Welcome to <span class="gradient-text">JeetBangla Bangladesh</span> - Your Ultimate Gaming Destination</h1>
+                    <p>Experience the excitement of premium online gaming tailored specifically for Bangladeshi players. From cricket betting to live casino action, JeetBangla brings world-class entertainment right to your fingertips.</p>
+                    <div class="cta-buttons">
+                        <a href="https://jeetbangla.casino/jeetbangla-register/" class="btn btn-primary">Join Now</a>
+                        <a href="https://jeetbangla.casino/jeetbangla-mobile-betting-app/" class="btn btn-outline">Download App</a>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">50K+</span>
+                            <span class="stat-label">Active Players</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">1000+</span>
+                            <span class="stat-label">Casino Games</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Support</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="hero-card">
+                        <h3>🎁 New Player Bonus</h3>
+                        <p>Get up to 150% welcome bonus on your first deposit plus 50 free spins. Start your winning journey with JeetBangla today!</p>
+                        <a href="https://jeetbangla.casino/jeetbangla-bonus-and-promotions/" class="btn btn-primary" style="margin-top: 20px;">Claim Bonus</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>Discover <span class="gradient-text">JeetBangla Online Casino</span></h2>
+            <p class="section-subtitle">Your trusted platform for sports betting, casino games, and live entertainment in Bangladesh</p>
+
+            <div class="glass-card reveal">
+                <h3>What Makes JeetBangla Special?</h3>
+                <p>JeetBangla has quickly become the preferred choice for online casino entertainment among Bangladeshi players. Our platform combines international gaming standards with local preferences, creating an experience that feels both familiar and exciting. Unlike generic international casinos, we understand what Bangladesh players need.</p>
+                
+                <p>The <a href="https://jeetbangla.casino/">JeetBangla</a> platform supports local payment methods including bKash, Nagad, and Rocket, making transactions simple and secure. Our customer support team speaks both Bengali and English, ensuring you get help in your preferred language whenever you need it. We've designed everything from payment processing to game selection with Bangladeshi players in mind.</p>
+
+                <p>Security stands at the core of everything we do. Advanced encryption protects your personal information and financial transactions. We hold proper licensing and undergo regular third-party audits to ensure fair gaming. When you choose JeetBangla Bangladesh, you're choosing a platform that values transparency and player protection above all else.</p>
+
+                <p>Our mobile-first approach recognizes that most Bangladeshi players prefer gaming on smartphones. The platform works flawlessly on all devices, and our dedicated app delivers even better performance. Whether you're commuting, relaxing at home, or taking a break at work, your favorite games are always just a tap away.</p>
+            </div>
+
+            <div class="glass-card reveal">
+                <h3>Why Bangladesh Players Choose JeetBangla</h3>
+                <p>The rise of online gaming in Bangladesh has created demand for platforms that truly understand local players. JeetBangla fills this gap perfectly. We don't just translate an international platform into Bengali – we've built our entire service around what matters most to players in Bangladesh.</p>
+
+                <p>Quick withdrawals matter when you win. Our system processes most withdrawal requests within 24 hours, often much faster for VIP members. You've earned your winnings, and we make sure you can access them without unnecessary delays. Multiple payment options mean you can choose the method that works best for you.</p>
+
+                <p>Game selection reflects local preferences. While we offer thousands of international titles, we've also curated collections specifically for Bangladeshi tastes. Cricket betting receives special attention because we know how passionate Bangladesh is about the sport. Live casino games run during peak hours for local players, and slot themes include options that resonate with regional culture.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="games">
+        <div class="container">
+            <h2>Explore Our <span class="gradient-text">Gaming Categories</span></h2>
+            <p class="section-subtitle">From cricket betting to live dealers, find your perfect game at JeetBangla</p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">🏏</span>
+                    <h3>Cricket Betting Excellence</h3>
+                    <p><a href="https://jeetbangla.casino/jeetbangla-cricket-betting/">JeetBangla cricket betting</a> offers comprehensive coverage of all major tournaments. We cover Bangladesh national team matches, IPL, Pakistan Super League, Big Bash, and international series. Our betting markets go beyond simple match winners.</p>
+                    <p>Place bets on top batsman, highest partnership, method of dismissal, over-by-over outcomes, and dozens of specialized markets. Live betting transforms how you experience cricket, letting you react to every ball with updated odds. Our odds are competitive, and our platform handles high-volume betting during major matches without slowdowns.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">🎰</span>
+                    <h3>Premium Slot Collection</h3>
+                    <p>The <a href="https://jeetbangla.casino/jeetbangla-slots/">JeetBangla Slot</a> library features over 800 titles from top providers like Pragmatic Play, NetEnt, and Microgaming. Classic three-reel slots sit alongside modern video slots with immersive graphics and bonus features.</p>
+                    <p>Progressive jackpot slots offer life-changing prizes that grow with every spin across our network. Themes range from ancient Egypt and mythology to adventure, fantasy, and popular culture. Free spins, multipliers, expanding wilds, and interactive bonus rounds keep gameplay exciting. New titles arrive weekly, ensuring fresh experiences for regular players.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">🐟</span>
+                    <h3>Fish Shooting Games</h3>
+                    <p>The <a href="https://jeetbangla.casino/jeetbangla-fish-shooting/">JeetBangla fish shooting game</a> category brings arcade excitement to casino gaming. These skill-based games challenge your aim and timing as you shoot various sea creatures for prizes.</p>
+                    <p>Different fish carry different point values, with rare species offering the biggest rewards. Special weapons and power-ups add strategic depth – knowing when to use them makes the difference between good and great results. The games are easy to learn but offer plenty of room for skill development.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">🎲</span>
+                    <h3>Live Casino Action</h3>
+                    <p><a href="https://jeetbangla.casino/jeetbangla-live-casino/">JeetBangla live casino</a> creates an authentic casino atmosphere through HD video streams. Professional dealers host games in real-time, and you can interact with them through chat functions.</p>
+                    <p>Choose from multiple blackjack variants, European and American roulette, baccarat, and various poker games. Game shows like Crazy Time and Monopoly Live combine traditional casino elements with entertainment features. Tables operate around the clock, with Bangladeshi-friendly hours ensuring you can always find active games.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">🎟️</span>
+                    <h3>Lottery Opportunities</h3>
+                    <p><a href="https://jeetbangla.casino/jeetbangla-lottery-games/">JeetBangla lottery games</a> run throughout the day, giving you multiple chances to win. Unlike weekly national lotteries, online lottery games at JeetBangla operate continuously with draws every few minutes.</p>
+                    <p>Ticket prices range from small amounts to premium options, accommodating different budgets. The transparent random number generation system ensures fair results for every draw. Prize pools vary by game type, with some offering substantial jackpots for lucky winners.</p>
+                </div>
+
+                <div class="feature-card">
+                    <span class="feature-icon">🎯</span>
+                    <h3>More Game Varieties</h3>
+                    <p>Beyond our main categories, JeetBangla offers table games, video poker, instant win games, and specialty options. Crash games have gained popularity for their simple mechanics and quick results. Virtual sports provide betting opportunities on simulated events.</p>
+                    <p>Our game providers update regularly, bringing new mechanics and features to the platform. You'll always find something new to try, whether you prefer strategic games or pure chance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="promotions">
+        <div class="container">
+            <h2>Maximize Your <span class="gradient-text">Winnings with Bonuses</span></h2>
+            <p class="section-subtitle">Smart players know how to leverage promotions for extended gameplay and better odds</p>
+
+            <div class="glass-card reveal">
+                <h3>Understanding JeetBangla Bonus Offers</h3>
+                <p>Every new player receives a welcome package when joining JeetBangla. The standard <a href="https://jeetbangla.casino/jeetbangla-bonus-and-promotions/">JeetBangla bonus</a> includes a deposit match that adds extra funds to your account. For example, a 100% match on a 5,000 BDT deposit gives you 10,000 BDT total to play with.</p>
+
+                <p>Regular promotions keep the excitement going after your welcome bonus. The <a href="https://jeetbangla.casino/jeetbangla-bonus-and-promotions/">jeetbangla promotion</a> calendar features daily and weekly offers. Monday reload bonuses help you start the week strong. Weekend tournaments in slots or live casino games offer prize pools for top performers. Special event promotions coincide with major cricket matches or festivals.</p>
+
+                <p>Using a <a href="https://jeetbangla.casino/jeetbangla-bonus-and-promotions/">JeetBangla promo code</a> during registration or deposit unlocks enhanced bonuses. These codes appear in promotional emails, on the promotions page, or through affiliate partners. Always check for current codes before depositing – they can significantly increase your bonus amount.</p>
+
+                <p>Bonus terms are straightforward at JeetBangla. Most bonuses require wagering the bonus amount a certain number of times before withdrawal. For instance, a bonus with 30x wagering means you need to place bets totaling 30 times the bonus amount. Different games contribute differently toward wagering – slots usually count 100%, while table games might count 10-20%. Check the specific terms for each bonus to understand requirements.</p>
+            </div>
+
+            <div class="promo-box reveal">
+                <h3>🎁 Exclusive Referral Code</h3>
+                <p style="position: relative; z-index: 10;">Use this code during registration for bonus rewards</p>
+                <div class="promo-code" id="promoCode">JEET2026VIP</div>
+                <button class="btn btn-primary copy-btn" onclick="copyCode()">Copy Code</button>
+                <div class="success-msg" id="successMsg">✓ Code copied! Use it during registration</div>
+            </div>
+
+            <div class="glass-card reveal">
+                <h3>Referral Program and Affiliate Opportunities</h3>
+                <p>The <a href="https://jeetbangla.casino/jeetbangla-referral/">JeetBangla referral code</a> system rewards you for bringing friends to the platform. Share your unique referral link or code with friends interested in online gaming. When they register and make their first deposit, both of you receive bonus credits.</p>
+
+                <p>Your <a href="https://jeetbangla.casino/jeetbangla-referral/">JeetBangla referral bonus</a> accumulates with each successful referral. There's no limit tohow many friends you can refer. Active referrers build substantial bonus balances over time. The key is sharing your genuine experience with people who would actually enjoy what JeetBangla offers.</p>
+            <p>For more serious promotion efforts, the <a href="https://jeetbangla.casino/jeetbangla-affiliate/">JeetBangla affiliate</a> program provides professional partnership opportunities. Affiliates receive commission structures based on referred player activity. The program includes tracking dashboards, marketing materials, and dedicated affiliate support.</p>
+
+            <p>Affiliate commissions typically operate on revenue share or CPA (cost per acquisition) models. Revenue share gives you a percentage of the net revenue generated by your referred players over time. CPA pays a fixed amount for each qualifying player you bring to the platform. Choose the model that fits your promotional strategy and traffic sources.</p>
+        </div>
+    </div>
+</section>
+
+<section id="mobile">
+    <div class="container">
+        <h2>Game Anywhere with <span class="gradient-text">JeetBangla App</span></h2>
+        <p class="section-subtitle">Take the full casino experience with you wherever you go</p>
+
+        <div class="glass-card reveal">
+            <h3>Download and Install JeetBangla Mobile App</h3>
+            <p>The <a href="https://jeetbangla.casino/jeetbangla-mobile-betting-app/">JeetBangla app download</a> process is straightforward and takes just minutes. Our mobile application is available for both Android and iOS devices, optimized specifically for smartphone gaming.</p>
+
+            <p>Android users can download the APK file directly from the official JeetBangla website. Visit the mobile section and click the download button. Your phone may show a security warning since the app comes from outside the Google Play Store – this is normal for casino apps. Enable installation from unknown sources in your settings, then proceed with installation.</p>
+
+            <p>iOS users can access the <a href="https://jeetbangla.casino/jeetbangla-mobile-betting-app/">JeetBangla app</a> through alternative installation methods detailed on our website. The installation process is explained step-by-step with screenshots to guide you through each stage.</p>
+
+            <p>Once installed, the <a href="https://jeetbangla.casino/jeetbangla-mobile-betting-app/">jeetbangla login app</a> provides the same functionality as the desktop version but optimized for touch controls. Biometric login options (fingerprint or face recognition) add convenience without compromising security. You can deposit, withdraw, play games, claim bonuses, and contact support all from within the app.</p>
+        </div>
+
+        <div class="glass-card reveal">
+            <h3>Mobile App Features and Benefits</h3>
+            <p>The JeetBangla mobile app isn't just a responsive website wrapped in an app shell. Our development team built native features that enhance the mobile gaming experience. Touch controls feel natural whether you're spinning slots, placing cricket bets, or playing live dealer games.</p>
+
+            <p>Push notifications keep you informed about promotions, bet results, and account activity without needing to open the app constantly. You can customize notification preferences to receive only the alerts that matter to you. The app also works offline for browsing game catalogs and checking your transaction history.</p>
+
+            <p>Graphics quality adjusts automatically based on your connection speed. On fast WiFi, you get maximum visual quality. On mobile data, the app optimizes performance to reduce data usage while maintaining smooth gameplay. This adaptive approach ensures good experiences regardless of your network conditions.</p>
+
+            <p>Battery optimization means longer gaming sessions. The app uses efficient rendering techniques that don't drain your phone's battery as quickly as playing through a mobile browser. You can enjoy extended gameplay without constantly searching for a charger.</p>
+        </div>
+    </div>
+</section>
+
+<section id="vip">
+    <div class="container">
+        <h2>Join the <span class="gradient-text">JeetBangla VIP Club</span></h2>
+        <p class="section-subtitle">Elite benefits for our most dedicated players</p>
+
+        <div class="glass-card reveal">
+            <h3>VIP Membership Benefits and Tiers</h3>
+            <p>The <a href="https://jeetbangla.casino/jeetbangla-vip-club/">JeetBangla VIP</a> program recognizes and rewards player loyalty through a tiered system. You don't purchase VIP status – you earn it through regular play. The system tracks your betting activity across all game categories, accumulating points that determine your VIP level.</p>
+
+            <p>Bronze tier members, our entry-level VIP status, already enjoy benefits like priority email support and monthly cashback on losses. Silver tier adds faster withdrawal processing and a dedicated support line. Gold tier members receive personalized bonus offers based on their gaming preferences, higher table limits in live casino games, and invitations to exclusive tournaments.</p>
+
+            <p>Platinum and Diamond tiers represent our highest VIP levels. Members at these tiers receive dedicated account managers who provide white-glove service. Birthday bonuses, luxury gifts, and even offline experiences become available. Withdrawal limits increase substantially, and processing times drop to just hours rather than days.</p>
+
+            <p>VIP progression happens naturally as you play. Every bet contributes points toward your next tier, whether you're betting on cricket, spinning slots, or playing live dealer games. The inclusive approach means all dedicated players can advance through VIP levels regardless of their preferred games.</p>
+
+            <p>Monthly VIP rewards include cashback percentages that increase with tier level. While Bronze members might receive 5% monthly cashback, Diamond tier members can earn 15% or more. This cashback has no wagering requirements – it's credited directly to your withdrawable balance as a thank you for your loyalty.</p>
+        </div>
+    </div>
+</section>
+
+<section id="account">
+    <div class="container">
+        <h2>Account Access <span class="gradient-text">Made Simple</span></h2>
+
+        <div class="glass-card reveal">
+            <h3>Creating Your JeetBangla Account</h3>
+            <p>Getting started with <a href="https://jeetbangla.casino/jeetbangla-register/">JeetBangla sign up</a> takes less than five minutes. The registration form requests essential information: your full name, email address, phone number, date of birth, and preferred currency. Choose a strong password combining uppercase and lowercase letters, numbers, and symbols.</p>
+
+            <p>The referral code field during registration is optional but recommended if you have a code from a friend or promotional campaign. Entering a valid code unlocks additional bonus funds or free spins on top of the standard welcome package. Don't skip this step if you have a code available.</p>
+
+            <p>After submitting your registration, check your email for a verification link. Clicking this link confirms your email address and fully activates your account. Some players complete optional identity verification at this stage by uploading a government ID and proof of address. While not required immediately, completing verification upfront speeds up your first withdrawal request.</p>
+        </div>
+
+        <div class="glass-card reveal">
+            <h3>Secure Login Practices</h3>
+            <p>Access your account through the <a href="https://jeetbangla.casino/jeetbangla-login/">JeetBangla login</a> page using your registered email and password. Always navigate to the login page by typing the official URL directly or using a saved bookmark. This protects you from phishing attempts that mimic the real login page.</p>
+
+            <p>Never share your login credentials with anyone, including people claiming to be JeetBangla support staff. Our legitimate team members never ask for your password. If you forget your password, use the password reset function which sends a secure reset link to your registered email address.</p>
+
+            <p>Enable two-factor authentication if your account settings offer this option. Two-factor authentication requires entering a code from your phone along with your password when logging in from new devices. This extra security layer significantly reduces the risk of unauthorized account access.</p>
+
+            <p>Log out when using shared or public devices. The session timeout feature automatically logs you out after periods of inactivity, but manually logging out provides immediate protection when you're finished playing on a device others might use.</p>
+        </div>
+    </div>
+</section>
+
+<section id="faq">
+    <div class="container">
+        <h2><span class="gradient-text">Frequently Asked</span> Questions</h2>
+        <p class="section-subtitle">Quick answers to common questions about JeetBangla</p>
+
+        <div class="faq-container">
+            <div class="faq-item reveal">
+                <div class="faq-question">How fast are withdrawals processed at JeetBangla?</div>
+                <div class="faq-answer">Most withdrawal requests process within 24 hours for verified accounts using e-wallets like bKash, Nagad, or Rocket. Bank transfers typically take 2-3 business days. VIP members enjoy priority processing with even faster turnaround times, often receiving funds within hours.</div>
+            </div>
+
+            <div class="faq-item reveal">
+                <div class="faq-question">What is the minimum deposit amount?</div>
+                <div class="faq-answer">Minimum deposits vary by payment method but generally start around 500 BDT. This accessible minimum ensures players with different budgets can enjoy the platform. Check the deposit page for exact minimums for your preferred payment method.</div>
+            </div>
+
+            <div class="faq-item reveal">
+                <div class="faq-question">Can I play on multiple devices with one account?</div>
+                <div class="faq-answer">Yes, your JeetBangla account works across all devices including desktop computers, laptops, tablets, and smartphones. Your balance, game history, and account settings sync automatically. Just remember to log out on shared devices for security.</div>
+            </div>
+
+            <div class="faq-item reveal">
+                <div class="faq-question">How do I claim my welcome bonus?</div>
+                <div class="faq-answer">Welcome bonuses typically activate automatically with your first deposit. If you have a promo code, enter it in the designated field during deposit. The bonus credits appear in your account immediately. Check the promotions page for current welcome offers and their specific terms.</div>
+            </div>
+
+            <div class="faq-item reveal">
+                <div class="faq-question">Is JeetBangla safe and secure?</div>
+                <div class="faq-answer">JeetBangla uses advanced SSL encryption to protect all data transmission between your device and our servers. We hold proper licensing and undergo regular third-party audits for fair gaming. Payment information is processed through secure, encrypted channels. Your personal and financial data remains protected at all times.</div>
+            </div>
+
+            <div class="faq-item reveal">
+                <div class="faq-question">What should I do if I have a technical problem?</div>
+                <div class="faq-answer">Contact our 24/7 customer support team through live chat, email, or phone. Live chat typically provides the fastest response. Have your username ready when contacting support to help them assist you efficiently. Our support team speaks both Bengali and English.</div>
+            </div>
+
+            <div class="faq-item reveal">
+                <div class="faq-question">How does the referral program work?</div>
+                <div class="faq-answer">Share your unique referral code or link with friends. When they register using your code and make their first deposit, both you and your friend receive bonus credits. There's no limit on referrals, and rewards credit automatically once your friend meets the qualifying conditions.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="responsible-gaming reveal">
+            <h3>⚠️ Responsible Gaming Commitment</h3>
+            <p>JeetBangla promotes responsible gaming practices. Set personal deposit limits through your account settings to manage your spending. Take regular breaks during gaming sessions. View online gaming as entertainment, not as a way to make money or solve financial problems.</p>
+            <p>If you feel your gaming habits may be becoming problematic, contact our support team for self-exclusion options or stricter account limits. We also provide links to professional gambling support organizations. Gaming should remain fun and within your means. Play responsibly and know when to stop.</p>
+        </div>
+
+        <div class="glass-card reveal">
+            <h3>Start Your JeetBangla Journey Today</h3>
+            <p>JeetBangla online casino delivers comprehensive entertainment designed specifically for Bangladesh players. Whether your passion is cricket betting, you enjoy slots and fish shooting games, you prefer the strategy of live casino tables, or you like testing your luck with lottery draws, our platform provides everything you need.</p>
+
+            <p>Localized payment methods, Bengali-speaking customer support, competitive bonuses, and a rewarding VIP program all work together to create an experience tailored for you. Mobile and desktop access ensures you can play whenever and wherever you choose. Robust security measures protect your information while fair gaming practices ensure every player has equal chances.</p>
+
+            <p>New player bonuses give you extra value from your very first deposit. Regular promotions keep rewards coming as you continue playing. The referral program lets you earn bonuses by sharing JeetBangla with friends, while the affiliate program offers serious income potential for dedicated promoters.</p>
+
+            <p>Registration takes just minutes, and our user-friendly platform makes navigation simple even for newcomers to online casinos. Comprehensive game tutorials help you learn new games, while our support team stands ready to answer questions whenever you need assistance.</p>
+
+            <p>Join thousands of satisfied players who have made JeetBangla Bangladesh their preferred gaming destination. Experience the difference a platform built specifically for Bangladeshi players can make. Your entertainment journey starts with a simple registration – create your account today and discover why JeetBangla leads the online casino market in Bangladesh.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="logo" style="margin-bottom: 24px;">JeetBangla</div>
+        <p style="color: rgba(248, 250, 252, 0.7); margin-bottom: 24px;">Bangladesh's Premier Online Casino Platform</p>
+        
+        <div class="footer-links">
+            <a href="https://jeetbangla.casino/">Home</a>
+            <a href="https://jeetbangla.casino/jeetbangla-cricket-betting/">Cricket Betting</a>
+            <a href="https://jeetbangla.casino/jeetbangla-slots/">Slots</a>
+            <a href="https://jeetbangla.casino/jeetbangla-live-casino/">Live Casino</a>
+            <a href="https://jeetbangla.casino/jeetbangla-bonus-and-promotions/">Promotions</a>
+            <a href="https://jeetbangla.casino/jeetbangla-vip-club/">VIP Club</a>
+            <a href="https://jeetbangla.casino/jeetbangla-mobile-betting-app/">Mobile App</a>
+        </div>
+
+        <div class="copyright">
+            <p>© 2026 JeetBangla. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<div class="back-to-top" id="backToTop">↑</div>
+
+<script>
+    const header = document.getElementById('header');
+    const backToTop = document.getElementById('backToTop');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section');
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+            backToTop.classList.add('show');
+        } else {
+            header.classList.remove('scrolled');
+            backToTop.classList.remove('show');
+        }
+
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (window.scrollY >= (sectionTop - 200)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+                const headerHeight = header.offsetHeight;
+                const targetPosition = targetSection.offsetTop - headerHeight;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -80px 0px'
+    });
+
+    document.querySelectorAll('.glass-card, .feature-card, .faq-item, .responsible-gaming, .promo-box').forEach(el => {
+        revealObserver.observe(el);
+    });
+
+    function copyCode() {
+        const code = document.getElementById('promoCode').textContent;
+        const successMsg = document.getElementById('successMsg');
+        
+        navigator.clipboard.writeText(code).then(() => {
+            successMsg.style.display = 'block';
+            setTimeout(() => {
+                successMsg.style.display = 'none';
+            }, 3500);
+        }).catch(() => {
+            alert('Code: ' + code);
+        });
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href.length > 1) {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    const headerHeight = header.offsetHeight;
+                    const targetPosition = target.offsetTop - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>
